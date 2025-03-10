@@ -5,6 +5,7 @@ import { Textarea } from '../ui/textarea';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
 import { Download, Upload, Pencil, Trash2, Shuffle } from 'lucide-react';
 import { useToast } from '../ui/use-toast';
+import ornament1 from '../../assets/o1.jpg';
 
 interface Hadith {
   id: string;
@@ -25,8 +26,20 @@ interface HadithPlannerProps {
 // HadithCard Component
 const HadithCard: React.FC<{ hadith: Hadith }> = ({ hadith }) => {
   return (
-    <div className="bg-gradient-to-br from-emerald-50 to-amber-50 rounded-lg overflow-hidden shadow-lg border border-amber-100 hover:shadow-xl transition-shadow duration-300">
-      <div className="p-6 space-y-4">
+    <div className="relative bg-gradient-to-br from-emerald-100 to-amber-50 rounded-lg overflow-hidden shadow-lg border border-amber-100 hover:shadow-xl transition-shadow duration-300">
+      
+      {/* Background Image Overlay */}
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none" 
+        style={{
+          backgroundImage: `url(${ornament1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+
+      <div className="relative p-6 space-y-4">
+        
         <div className="flex justify-between items-start">
           <div className="space-y-1">
             <h3 className="text-lg font-semibold text-emerald-800">
@@ -58,6 +71,7 @@ const HadithCard: React.FC<{ hadith: Hadith }> = ({ hadith }) => {
     </div>
   );
 };
+
 
 const HadithPlanner: React.FC<HadithPlannerProps> = ({ hadiths, onHadithsChange }) => {
   const [editingHadith, setEditingHadith] = useState<Hadith | null>(null);

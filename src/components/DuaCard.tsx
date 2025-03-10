@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dua } from '../data/Quran';
+import ornament1 from '../assets/o1.jpg';
 
 interface DuaCardProps {
   dua: Dua;
@@ -8,6 +9,14 @@ interface DuaCardProps {
 const DuaCard: React.FC<DuaCardProps> = ({ dua }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-300 hover:shadow-lg hover:-translate-y-1 geometric-pattern">
+      <div
+        className="absolute inset-0 opacity-10 pointer-events-none" 
+        style={{
+          backgroundImage: `url(${ornament1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
       <div className="bg-emerald-800 py-3 px-4">
         <h3 className="text-xl font-semibold text-white font-scheherazade">{dua.title}</h3>
         <p className="text-amber-300 font-['Amiri'] text-right text-xl mt-1">{dua.arabicTitle}</p>

@@ -1,4 +1,5 @@
 # Ramadan Virtues Web Application
+<img width="1652" height="754" alt="image" src="https://github.com/user-attachments/assets/8090feb2-9f75-44e1-88c3-79500cbcb962" />
 
 A modern, responsive React application showcasing the virtues and blessings of Ramadan. Built with React, TypeScript, and Tailwind CSS.
 
